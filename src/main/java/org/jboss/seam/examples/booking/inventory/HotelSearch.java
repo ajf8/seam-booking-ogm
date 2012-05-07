@@ -102,8 +102,10 @@ public class HotelSearch {
 		final QueryBuilder builder = em.getSearchFactory().buildQueryBuilder()
 				.forEntity(Hotel.class).get();
 
-		final Query luceneQuery = builder.keyword().onField("name")
-				.matching(criteria.getQuery()).createQuery();
+		final Query luceneQuery = builder.keyword()
+			.onField("name").andField("address").andField("city")
+			.andField("state").andField("zip").andField("country")
+					.matching(criteria.getQuery()).createQuery();
 
 		System.out.println(luceneQuery.toString());
 

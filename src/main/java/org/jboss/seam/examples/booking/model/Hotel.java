@@ -50,10 +50,15 @@ public class Hotel implements Serializable {
     private Long id;
     @Field
     private String name;
+    @Field
     private String address;
+    @Field
     private String city;
+    @Field
     private String state;
+    @Field
     private String zip;
+    @Field
     private String country;
     private Integer stars;
     private BigDecimal price;
