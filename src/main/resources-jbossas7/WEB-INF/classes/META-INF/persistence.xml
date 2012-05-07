@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
+  <persistence-unit name="booking">
+    <class>org.jboss.seam.examples.booking.model.User</class>
+    <class>org.jboss.seam.examples.booking.model.Booking</class>
+    <class>org.jboss.seam.examples.booking.model.Hotel</class>
+    <properties>
+      <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+      <property name="jboss.as.jpa.providerModule" value="org.hibernate:ogm"/>
+      <!-- Properties for Hibernate (default provider for JBoss AS) -->
+      <property name="hibernate.ogm.datastore.provider" value="org.hibernate.ogm.datastore.mongodb.impl.MongoDBDatastoreProvider"/>
+      <property name="hibernate.ogm.mongodb.database" value="booking"/>
+      <property name="hibernate.ogm.mongodb.host" value="localhost"/>
+      <!-- <property name="hibernate.search.model_mapping" value="org.hibernate.ogm.demo.intro.tools.HibernateSearchMapping"/> -->
+      <property name="hibernate.search.default.directory_provider" value="filesystem"/>
+      <property name="hibernate.search.default.indexBase" value="/home/alan/.luceneindexes"/>
+    </properties>
+    <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+  </persistence-unit>
+</persistence>
