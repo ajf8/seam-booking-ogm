@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.hibernate" slot="ogm">
+    <resources>
+        <resource-root path="hibernate-ogm-core-4.0.0-SNAPSHOT.jar"/>
+        <resource-root path="hibernate-ogm-mongodb-4.0.0-SNAPSHOT.jar"/>
+        <resource-root path="hibernate-ogm-infinispan-4.0.0-SNAPSHOT.jar"/>
+        <resource-root path="mongo-java-driver-2.7.2.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.jboss.as.jpa.hibernate" slot="4"/>
+        <module name="org.hibernate" slot="main" export="true" />
+        <module name="javax.api"/>
+        <module name="javax.persistence.api"/>
+        <module name="javax.transaction.api"/>
+        <module name="javax.validation.api"/>
+        <module name="org.infinispan"/>
+        <module name="org.javassist"/>
+        <module name="org.jboss.logging"/>
+    </dependencies>
+</module>
