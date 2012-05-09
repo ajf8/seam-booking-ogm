@@ -26,6 +26,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
 import org.hibernate.validator.constraints.Email;
 import org.jboss.solder.core.Veto;
 
@@ -40,8 +42,10 @@ import org.jboss.solder.core.Veto;
 @Entity
 @Table(name = "traveler")
 @Veto
+@Indexed
 public class User implements Serializable {
     private static final long serialVersionUID = -602733026033932730L;
+    @Field
     private String username;
     private String password;
     private String name;
